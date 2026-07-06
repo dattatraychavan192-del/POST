@@ -10,7 +10,8 @@ const updateBtn = document.getElementById("updateBtn");
 
 const postContainer = document.getElementById("postContainer");
 
-let baseURL = "http://localhost:3000/blogs";
+// let baseURL = "http://localhost:3000/blogs";
+const baseUrl = "https://post-crud-api.onrender.com/blogs";
 let postArr = [];
 
 function snackbar(msg, icon) {
