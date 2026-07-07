@@ -11,7 +11,7 @@ const updateBtn = document.getElementById("updateBtn");
 const postContainer = document.getElementById("postContainer");
 
 // let baseUrl = "http://localhost:3000/blogs";
-const baseUrl = "https://node-backdend.onrender.com/posts";
+const baseUrl = "https://node-backdend.onrender.com/blogs";
 let postArr = [];
 
 function snackbar(msg, icon) {
@@ -51,9 +51,9 @@ function fetchPost() {
 
   fetch(baseUrl, {
     method: "GET",
-    headers: {
-      "content-type": "application/type",
-    },
+    // headers: {
+    //   "content-type": "application/type",
+    // },
   })
     .then((res) => {
       if (!res.ok) {
