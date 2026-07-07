@@ -49,12 +49,7 @@ const spinner = document.getElementById("spinner");
 function fetchPost() {
   spinner.classList.remove("d-none");
 
-  fetch(baseUrl, {
-    method: "GET",
-    // headers: {
-    //   "content-type": "application/type",
-    // },
-  })
+  fetch(baseUrl)
     .then((res) => {
       if (!res.ok) {
         throw new Error("failed to load");
