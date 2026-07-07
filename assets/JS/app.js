@@ -10,8 +10,8 @@ const updateBtn = document.getElementById("updateBtn");
 
 const postContainer = document.getElementById("postContainer");
 
-// let baseURL = "http://localhost:3000/blogs";
-const baseUrl = "https://post-crud-api.onrender.com/blogs";
+// let baseUrl = "http://localhost:3000/blogs";
+const baseUrl = "https://node-backdend.onrender.com";
 let postArr = [];
 
 function snackbar(msg, icon) {
@@ -49,7 +49,7 @@ const spinner = document.getElementById("spinner");
 function fetchPost() {
   spinner.classList.remove("d-none");
 
-  fetch(baseURL, {
+  fetch(baseUrl, {
     method: "GET",
     headers: {
       "content-type": "application/type",
@@ -84,7 +84,7 @@ function onEdit(ele) {
 
   let editId = ele.closest(".col-md-3").id;
   localStorage.setItem("editId", editId);
-  let editUrl = `${baseURL}/${editId}`;
+  let editUrl = `${baseUrl}/${editId}`;
 
   fetch(editUrl, {
     method: "GET",
@@ -129,7 +129,7 @@ function onSubmit(eve) {
     userId: userId.value,
   };
 
-  fetch(baseURL, {
+  fetch(baseUrl, {
     method: "POST",
     body: JSON.stringify(newObj),
     headers: {
@@ -193,7 +193,7 @@ function updateCard() {
   };
   let updateId = localStorage.getItem("editId");
 
-  let updateUrl = `${baseURL}/${updateId}`;
+  let updateUrl = `${baseUrl}/${updateId}`;
 
   fetch(updateUrl, {
     method: "PATCH",
@@ -261,7 +261,7 @@ function onDelete(ele) {
     if (result.isConfirmed) {
       let deleteId = ele.closest(".col-md-3").id;
 
-      let deleteUrl = `${baseURL}/${deleteId}`;
+      let deleteUrl = `${baseUrl}/${deleteId}`;
 
       fetch(deleteUrl, {
         method: "DELETE",
