@@ -274,6 +274,8 @@ function onDelete(ele) {
         .then((data) => {
           document.getElementById(deleteId).remove();
           snackbar(`Post delete with ID ${deleteId}`, "success");
+
+          postForm.reset();
         })
         .catch((err) => {
           snackbar(err, "error");
